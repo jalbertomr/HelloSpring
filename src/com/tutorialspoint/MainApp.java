@@ -12,10 +12,8 @@ public class MainApp {
 
         HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
 
-        objA.setMessage("Soy el Objeto A");
         objA.getMessage();
 
-        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
-        objB.getMessage();
+        context.registerShutdownHook();
     }
 }
