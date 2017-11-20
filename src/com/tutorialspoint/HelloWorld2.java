@@ -1,10 +1,10 @@
 package com.tutorialspoint;
 
-public class HelloWorld {
+public class HelloWorld2 {
     private String message;
 
     public void getMessage() {
-        System.out.println("Tu mensaje: "  + message);
+        System.out.println("Tu mensaje: " + message);
     }
 
     public void setMessage(String message) {
@@ -17,5 +17,4 @@ public class HelloWorld {
 
     public void destroy() {
         System.out.println(this.getClass().getSimpleName() + ": Bean esta llamando destroy() ");
-    }
-}
+    }}

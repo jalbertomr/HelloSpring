@@ -11,8 +11,10 @@ public class MainApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
         HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+        HelloWorld2 obj2 = (HelloWorld2) context.getBean("helloWorld2");
 
         objA.getMessage();
+        obj2.getMessage();
 
         context.registerShutdownHook();
     }
