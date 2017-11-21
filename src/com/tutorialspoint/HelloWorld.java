@@ -3,8 +3,8 @@ package com.tutorialspoint;
 public class HelloWorld {
     private String message;
 
-    public void getMessage() {
-        System.out.println("Tu mensaje: "  + message);
+    public String getMessage() {
+        return "Tu mensaje: "  + message;
     }
 
     public void setMessage(String message) {
@@ -12,6 +12,7 @@ public class HelloWorld {
     }
 
     public void init() {
+
         System.out.println(this.getClass().getSimpleName() + ": Bean esta llamando init() " );
     }
 
