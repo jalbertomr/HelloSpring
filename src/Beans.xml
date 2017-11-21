@@ -7,6 +7,9 @@
         <!-- como si fuera una llamada a setAddressList(java.util.List)   -->
         <property name="addressList">
             <list>
+                <ref bean="address1"/>
+                <ref bean="address1"/>
+                <ref bean="address2" />
                 <value>Mexico</value>
                 <value>Venezuela</value>
                 <value>USA</value>
@@ -17,6 +20,9 @@
         <!-- como si fuera una llamada a setAddressSet(java.util.Set) -->
         <property name="addressSet">
             <set>
+                <ref bean="address1" />
+                <ref bean="address1" />
+                <ref bean="address2" />
                 <value>Mexico</value>
                 <value>Venezuela</value>
                 <value>USA</value>
@@ -31,6 +37,8 @@
                 <entry key="2" value="Venezuela"/>
                 <entry key="3" value="USA"/>
                 <entry key="4" value="USA"/>
+                <entry key="5" value-ref="address1" />
+                <entry key="6" value-ref="address2" />
             </map>
         </property>
 
@@ -44,4 +52,15 @@
             </props>
         </property>
     </bean>
+
+    <bean id="address1" class="com.tutorialspoint.Address">
+        <property name="calle" value="Reforma 222"/>
+        <property name="codigoPostal" value="034332"/>
+    </bean>
+
+    <bean id="address2" class="com.tutorialspoint.Address">
+        <property name="calle" value="Sonora 176" />
+        <property name="codigoPostal" value="043221" />
+    </bean>
+
 </beans>
