@@ -8,12 +8,12 @@
         <property name="addressList">
             <list>
                 <ref bean="address1"/>
-                <ref bean="address1"/>
                 <ref bean="address2" />
                 <value>Mexico</value>
                 <value>Venezuela</value>
                 <value>USA</value>
-                <value>USA</value>
+                <ref bean="addressCalleEmpty" />
+                <ref bean="addressCalleNull" />
             </list>
         </property>
 
@@ -27,6 +27,8 @@
                 <value>Venezuela</value>
                 <value>USA</value>
                 <value>USA</value>
+                <ref bean="addressCalleEmpty" />
+                <ref bean="addressCalleNull" />
             </set>
         </property>
 
@@ -35,10 +37,10 @@
             <map>
                 <entry key="1" value="Mexico"/>
                 <entry key="2" value="Venezuela"/>
-                <entry key="3" value="USA"/>
-                <entry key="4" value="USA"/>
                 <entry key="5" value-ref="address1" />
                 <entry key="6" value-ref="address2" />
+                <entry key="8" value-ref="addressCalleEmpty" />
+                <entry key="8" value-ref="addressCalleNull" />
             </map>
         </property>
 
@@ -63,4 +65,13 @@
         <property name="codigoPostal" value="043221" />
     </bean>
 
+    <bean id="addressCalleNull" class="com.tutorialspoint.Address">
+        <property name="calle"><null/></property>
+        <property name="codigoPostal" value="1123" />
+    </bean>
+
+    <bean id="addressCalleEmpty" class="com.tutorialspoint.Address">
+        <property name="calle" value="" />
+        <property name="codigoPostal" value="0" />
+    </bean>
 </beans>
