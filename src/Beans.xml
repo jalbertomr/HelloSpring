@@ -8,5 +8,6 @@
         <property name="message" value="desde la clase bean helloWorld" />
     </bean>
 
-    <bean class="com.tutorialspoint.InitHelloSpring"/>
+    <bean class="com.tutorialspoint.InitHelloSpring" />
+    <bean class="com.tutorialspoint.InitHelloSpring2" />
 </beans>
