@@ -3,7 +3,9 @@ package com.tutorialspoint;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;
+import org.springframework.stereotype.Component;
 
+@Component
 public class InitHelloSpring2 implements BeanPostProcessor, Ordered {
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
