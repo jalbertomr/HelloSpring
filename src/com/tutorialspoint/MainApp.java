@@ -7,14 +7,13 @@ public class MainApp {
     public static void main(String... args) {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        Object objA = context.getBean("helloWorld");
-        HelloWorld helloWorld = (HelloWorld) objA;
-        System.out.println(helloWorld.getMessage());
-        System.out.println(helloWorld.getMessage2());
+        TextEditor textEditor = (TextEditor) context.getBean("textEditor");
+        textEditor.spellCheck();
 
-        HelloMexico helloMexico = (HelloMexico) context.getBean("helloMexico");
-        System.out.println(helloMexico.getMessage());
-        System.out.println(helloMexico.getMessage2());
-        System.out.println(helloMexico.getMessage3());
+        Foo foo = (Foo) context.getBean("foo");
+
+        Foo fooYearName = (Foo) context.getBean("fooYearName");
+
+        Foo fooIndex0Index1 = (Foo) context.getBean("fooIndex0Index1");
     }
 }

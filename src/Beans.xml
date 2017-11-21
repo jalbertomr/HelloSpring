@@ -3,14 +3,28 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
-        <property name="message" value="helloWorld" />
-        <property name="message2" value="otro mensaje de helloWorld"/>
+    <bean id="textEditor" class="com.tutorialspoint.TextEditor">
+        <constructor-arg ref="spellChecker" />
     </bean>
 
-    <bean id="helloMexico" class="com.tutorialspoint.HelloMexico" parent="helloWorld">
-        <property name="message" value="Hola Mexico" />
-        <property name="message3" value="... mas mensaje de Mexico" />
+    <bean id="spellChecker" class="com.tutorialspoint.SpellChecker">
     </bean>
 
+    <bean id="foo" class="com.tutorialspoint.Foo">
+        <constructor-arg ref="bar"/>
+        <constructor-arg ref="baz"/>
+    </bean>
+
+    <bean id="fooYearName" class="com.tutorialspoint.Foo">
+        <constructor-arg type="int" value="2017"/>
+        <constructor-arg type="java.lang.String" value="Ventura"/>
+    </bean>
+
+    <bean id="fooIndex0Index1" class="com.tutorialspoint.Foo">
+        <constructor-arg index="0" value="2001"/>
+        <constructor-arg index="1" value="PorIndex"/>
+    </bean>
+
+    <bean id="bar" class="com.tutorialspoint.Bar"/>
+    <bean id="baz" class="com.tutorialspoint.Baz"/>
 </beans>
