@@ -1,11 +1,12 @@
 package com.tutorialspoint;
 
-public class HelloWorld {
+public class HelloMexico {
     private String message;
     private String message2;
+    private String message3;
 
     public String getMessage() {
-        return "World mensaje: "  + message;
+        return "Mexico mensaje: "  + message;
     }
 
     public void setMessage(String message) {
@@ -13,10 +14,18 @@ public class HelloWorld {
     }
 
     public String getMessage2() {
-        return "World mensaje2: " + message2;
+        return "Mexico mensaje2: "  + message2;
     }
 
     public void setMessage2(String message2) {
         this.message2 = message2;
+    }
+
+    public String getMessage3() {
+        return "Mexico mensaje3: "  + message3;
+    }
+
+    public void setMessage3(String message3) {
+        this.message3 = message3;
     }
 }

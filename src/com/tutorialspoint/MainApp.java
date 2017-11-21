@@ -10,7 +10,11 @@ public class MainApp {
         Object objA = context.getBean("helloWorld");
         HelloWorld helloWorld = (HelloWorld) objA;
         System.out.println(helloWorld.getMessage());
+        System.out.println(helloWorld.getMessage2());
 
-        context.registerShutdownHook();
+        HelloMexico helloMexico = (HelloMexico) context.getBean("helloMexico");
+        System.out.println(helloMexico.getMessage());
+        System.out.println(helloMexico.getMessage2());
+        System.out.println(helloMexico.getMessage3());
     }
 }
