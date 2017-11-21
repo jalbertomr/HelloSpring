@@ -9,11 +9,5 @@ public class MainApp {
 
         TextEditor textEditor = (TextEditor) context.getBean("textEditor");
         textEditor.spellCheck();
-
-        Foo foo = (Foo) context.getBean("foo");
-
-        Foo fooYearName = (Foo) context.getBean("fooYearName");
-
-        Foo fooIndex0Index1 = (Foo) context.getBean("fooIndex0Index1");
     }
 }
