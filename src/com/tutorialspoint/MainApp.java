@@ -13,5 +13,6 @@ public class MainApp {
         Foo foo = (Foo) context.getBean(Foo.class);
 
         //Foo fooYearName = (Foo) context.getBean(Foo.class);
+        context.registerShutdownHook();
     }
 }

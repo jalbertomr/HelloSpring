@@ -26,7 +26,7 @@ public class AppConfig {
         return new Baz();
     }
 
-    @Bean
+    @Bean(initMethod = "init",destroyMethod = "cleanUp")
     public Foo foo() {
         return new Foo( bar(), baz() );
     }
