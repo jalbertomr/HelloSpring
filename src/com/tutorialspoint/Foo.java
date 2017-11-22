@@ -1,6 +1,8 @@
 package com.tutorialspoint;
 
 public class Foo {
+    private String message;
+
     public Foo(Bar bar, Baz baz) {
         System.out.println("Foo: Constructor(Bar bar, Baz baz)");
     }
@@ -15,5 +17,13 @@ public class Foo {
 
     public void cleanUp(){
         System.out.println("Foo: cleanUp()");
+    }
+
+    public void getMessage() {
+        System.out.println("Foo mensaje: " + message);
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

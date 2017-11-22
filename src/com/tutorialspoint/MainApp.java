@@ -11,6 +11,11 @@ public class MainApp {
         textEditor.spellCheck();
 
         Foo foo = (Foo) context.getBean(Foo.class);
+        foo.setMessage("I'm Singleton");
+        foo.getMessage();
+
+        Foo foo2 = (Foo) context.getBean(Foo.class);
+        foo.getMessage();
 
         //Foo fooYearName = (Foo) context.getBean(Foo.class);
         context.registerShutdownHook();

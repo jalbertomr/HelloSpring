@@ -3,6 +3,7 @@ package com.tutorialspoint;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class AppConfig {
@@ -27,6 +28,7 @@ public class AppConfig {
     }
 
     @Bean(initMethod = "init",destroyMethod = "cleanUp")
+    @Scope("singleton")
     public Foo foo() {
         return new Foo( bar(), baz() );
     }
