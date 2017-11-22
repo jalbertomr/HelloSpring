@@ -6,9 +6,16 @@
 
     <context:annotation-config/>
 
-    <bean id="student" class="com.tutorialspoint.Student">
-        <property name="name" value="Lucas"/>
-        <!-- Try without passing age and check the result
-        <property name="age" value="23"/>   -->
+    <bean id="profile" class="com.tutorialspoint.Profile"/>
+
+    <bean id="student1" class="com.tutorialspoint.Student">
+        <property name="name" value="Zaratustra"/>
+        <property name="age" value="111"/>
     </bean>
+
+    <bean id="student2" class="com.tutorialspoint.Student">
+        <property name="name" value="Mathusalem"/>
+        <property name="age" value="999"/>
+    </bean>
+
 </beans>
