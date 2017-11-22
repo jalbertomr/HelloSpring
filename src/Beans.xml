@@ -8,7 +8,7 @@
 
     <bean id="student" class="com.tutorialspoint.Student">
         <property name="name" value="Lucas"/>
-        <!-- Try without passing age and check the result -->
-        <property name="age" value="23"/>
+        <!-- Try without passing age and check the result
+        <property name="age" value="23"/>   -->
     </bean>
 </beans>
