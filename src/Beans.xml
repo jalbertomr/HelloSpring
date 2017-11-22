@@ -7,4 +7,6 @@
         <property name="message" value="Hola Perrito Mundo!"/>
     </bean>
 
+    <bean id="cStartEventHandler" class="com.tutorialspoint.CStartEventHandler"/>
+    <bean id="cStopEventHandler" class="com.tutorialspoint.CStopEventHandler"/>
 </beans>

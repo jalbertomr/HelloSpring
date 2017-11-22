@@ -8,9 +8,15 @@ import org.springframework.core.io.ClassPathResource;
 
 public class MainApp {
     public static void main(String... args) {
-        FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("C:\\Users\\Bext\\Desktop\\HelloSpring\\src\\Beans.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+
+        //Disparamos un evento Start
+        context.start();
 
         HelloWorld o = (HelloWorld) context.getBean("helloWorld");
         o.getMessage();
+
+        //Disparamos un evento Stop
+        context.stop();
     }
 }
