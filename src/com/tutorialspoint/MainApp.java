@@ -10,13 +10,8 @@ public class MainApp {
     public static void main(String... args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        //Disparamos un evento Start
-        context.start();
-
-        HelloWorld o = (HelloWorld) context.getBean("helloWorld");
-        o.getMessage();
-
-        //Disparamos un evento Stop
-        context.stop();
+        CustomEventPublisher cep = (CustomEventPublisher) context.getBean("customEventPublisher");
+        cep.publish();
+        cep.publish();
     }
 }
