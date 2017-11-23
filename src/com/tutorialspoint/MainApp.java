@@ -10,5 +10,7 @@ public class MainApp {
         Student student = (Student) context.getBean("student");
         System.out.println("Nombre: " + student.getName());
         System.out.println("Edad  : " + student.getAge());
+
+        student.printThrowException();
     }
 }
