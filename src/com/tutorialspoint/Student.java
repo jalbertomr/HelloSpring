@@ -1,7 +1,5 @@
 package com.tutorialspoint;
 
-import org.springframework.beans.factory.annotation.Required;
-
 public class Student {
     private Integer age;
     private String name;

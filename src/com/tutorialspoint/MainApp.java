@@ -11,6 +11,6 @@ public class MainApp {
         System.out.println("Nombre: " + student.getName());
         System.out.println("Edad  : " + student.getAge());
 
-        student.printThrowException();
+       // student.printThrowException();
     }
 }
