@@ -4,10 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="textEditor" class="com.tutorialspoint.TextEditor">
-        <constructor-arg ref="spellChecker" />
+        <constructor-arg ref="spellCheckerSP" />
     </bean>
 
     <bean id="spellChecker" class="com.tutorialspoint.SpellChecker">
+    </bean>
+    <bean id="spellCheckerEN" class="com.tutorialspoint.SpellCheckerEN">
+    </bean>
+    <bean id="spellCheckerSP" class="com.tutorialspoint.SpellCheckerSP">
     </bean>
 
     <bean id="foo" class="com.tutorialspoint.Foo">
