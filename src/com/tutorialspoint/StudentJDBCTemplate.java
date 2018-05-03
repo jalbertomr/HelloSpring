@@ -1,18 +1,24 @@
 package com.tutorialspoint;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 
 import javax.sql.DataSource;
 import java.util.List;
+import java.util.Map;
 
 public class StudentJDBCTemplate implements StudentDAO {
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplateObj;
+    private SimpleJdbcCall jdbcCall;
 
     @Override
     public void setDataSource(DataSource ds) {
       this.dataSource = ds;
       this.jdbcTemplateObj = new JdbcTemplate(ds);
+      this.jdbcCall = new SimpleJdbcCall(ds).withProcedureName("getRecord");
     }
 
     @Override
@@ -27,6 +33,17 @@ public class StudentJDBCTemplate implements StudentDAO {
     public Student getStudent(Integer id) {
         String SQL = "select * from student where id = ?";
         Student student = jdbcTemplateObj.queryForObject(SQL, new Object[]{id}, new StudentMapper());
+        return student;
+    }
+
+    public Student getStudentStoreProc(Integer id){
+        SqlParameterSource in = new MapSqlParameterSource().addValue("in_id", id);
+        Map<String, Object> out = jdbcCall.execute(in);
+
+        Student student = new Student();
+        student.setId(id);
+        student.setName((String)out.get("out_name"));
+        student.setAge((Integer)out.get("out_age"));
         return student;
     }
 

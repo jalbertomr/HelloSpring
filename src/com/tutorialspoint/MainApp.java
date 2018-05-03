@@ -24,7 +24,7 @@ public class MainApp {
         }
 
         System.out.println("---- desplegando registro con id = 2");
-        Student student = studentJDBCTemplate.getStudent(2);
+        Student student = studentJDBCTemplate.getStudentStoreProc(2);
         System.out.print("ID: " + student.getId());
         System.out.print(", name: " + student.getName());
         System.out.println(", age: " + student.getAge());
@@ -33,7 +33,7 @@ public class MainApp {
         studentJDBCTemplate.update(2,30);
 
         System.out.println("---- desplegando registro con id = 2");
-        student = studentJDBCTemplate.getStudent(2);
+        student = studentJDBCTemplate.getStudentStoreProc(2);
         System.out.print("ID: " + student.getId());
         System.out.print(", name: " + student.getName());
         System.out.println(", age: " + student.getAge());
