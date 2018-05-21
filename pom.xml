@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.springframework.samples</groupId>
+    <artifactId>HelloSpring</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <spring.version>4.3.12.RELEASE</spring.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--Expression Language (depende de spring-core)
+        Definirla si se usa spring Expression APIs
+        (org.springframework.expression.*)
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--Bean Factory and JavaBeans utilities (depends on spring-core)
+        Definirla si se usa Spring Beans APIs
+        (org.springframework.beans.*
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--Aspect Oriented Programming (AOP) Framework
+        (depends on spring-core spring-beans)
+        Definirla si se usa Spring AOP APIs
+        (org.springframework.aop.*
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.4</version>
+        </dependency>
+
+        <!-- Application Context
+        (depende de spring-core, spring-expression, spring-aop, spring-beans)
+        Este es el artifact central para el contenedor de Injeccion de Dependencias de Spring
+        y es por lo general siempre definido
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- varias utilerias de Application Context, incluyendo EhCache, JavaMail, Quartz
+        y Freemaker integration
+        Definirla si se utliliza cualquiera de estas integraciones
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- Transaction Management Abstraction
+        (depende de spring-core, spring-beans, spring-aop, spring-context)
+        Definirla si se usa Spring Transaccions o DAO Exception Hierarchy
+        (org.springframework.transaction.*/org.springframework.dao.*)
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- JDBC Data Access Library
+        (depende de spring-core, spring-beans, spring-context, spring-tx)
+        Definirla si se usa spring JdbcTemplate APIs
+        (org.springframework.jdbc.*)
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- Object-to-Relation-Mapping (ORM) integracion con hibernate, JPA y iBatis.
+        (depende de spring-core, spring-beans, spring-context, spring-tx)
+        Definirla si se necesita ORM (org.springframework.orm.*)
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- Object-to-XML Mapping (OXM) abstraccion e integracion con JAXB, JiBX,
+        Castor, XStream, and XML Beans.
+        (depende de spring-core, spring-beans, spring-context)
+        Definirla si se necesita OXM (org.springframework.oxm.*)
+        -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- MySQL JDBC driver-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+        </dependency>
+    </dependencies>
+    
+</project>
