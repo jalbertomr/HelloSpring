@@ -17,12 +17,12 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <aop:config proxy-target-class="true">
         <aop:advisor advice-ref="transactionAdvisor"
-                     pointcut="execution(* com.project.service.impl.StudentServiceImpl.createGroup(..))"/>
+                     pointcut="execution(* com.project.service.impl.StudentServiceImpl.create(..))"/>
     </aop:config>
 
     <tx:advice id="transactionAdvisor">
         <tx:attributes>
-            <tx:method name="createGroup" isolation="READ_COMMITTED" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="create" isolation="READ_COMMITTED" read-only="false" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
         </tx:attributes>
     </tx:advice>
 
@@ -34,8 +34,19 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
         <property name="jdbcTemplate" ref="jdbcTemplate" />
     </bean>
 
+    <bean id="marksDAO" class="com.project.dao.impl.MarksDAOImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="serviceDAO" class="com.project.dao.impl.ServiceDAOImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+        <property name="studentDAO" ref="studentDAO" />
+        <property name="marksDAO" ref="marksDAO"/>
+    </bean>
+
     <bean id="studentService" class="com.project.service.impl.StudentServiceImpl">
         <property name="studentDAO" ref="studentDAO"/>
+        <property name="serviceDAO" ref="serviceDAO"/>
     </bean>
 
     <bean id="transactionManager"

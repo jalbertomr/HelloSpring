@@ -15,5 +15,5 @@ public interface StudentDAO {
     public int delete(Integer id);
     public int deleteAll();
     public int update(Integer id, Integer age);
-    //public Student getStudentStoreProc(Integer id);
+    public Student getStudentStoreProc(Integer id);
 }

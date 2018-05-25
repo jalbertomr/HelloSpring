@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class StudentMapper implements RowMapper<Student> {
-    @Override
+    //@Override
     public Student mapRow(ResultSet rs, int i) throws SQLException {
         Student student = new Student();
         student.setId(rs.getInt("id"));
